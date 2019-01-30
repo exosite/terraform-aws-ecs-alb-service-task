@@ -200,4 +200,8 @@ resource "aws_ecs_service" "default" {
   lifecycle {
     ignore_changes = ["task_definition"]
   }
+
+  deployment_controller {
+    type = "${var.deployment_controller_type}"
+  }
 }
